@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
-<head>
+
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
     <title>Web</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <h1>Website under development</h1>
     <hr>
     <a href="{% url '' %}">Home</a>
@@ -16,8 +20,7 @@
     &nbsp;
     <a href="{% url 'register' %}">회원가입</a>
     <hr>
-    {% block content %}
-    
-    {% endblock content %}
-</body>
+    {% block content %}{% endblock content %}
+  </body>
+
 </html>
