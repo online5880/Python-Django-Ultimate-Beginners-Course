@@ -4,10 +4,10 @@
     <h3>Task 만들기</h3>
     <hr>
 
-    <form action="" method="post", autucomplete="off" enctype="multipart/form-data">
+    <form action="" method="post", autucomplete="off">
         {% csrf_token %}
 
-        {{TaskForm.as_p}}
+        {{RegistrationForm.as_p}}
 
         <input type="submit" value="완료">
     </form>
