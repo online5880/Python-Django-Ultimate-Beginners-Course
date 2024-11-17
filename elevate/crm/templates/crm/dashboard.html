@@ -6,6 +6,10 @@
 
     <hr>
 
+    <form action="{% url 'user-logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">로그아웃</button>
+    </form>
 
 
 {% endblock content %}

@@ -77,7 +77,6 @@ def register(request):
 
 
 # Login
-
 def my_login(request):
     
     form = LoginForm()
@@ -91,7 +90,7 @@ def my_login(request):
             user = authenticate(request, username=username, password = password)
             
             if user is not None:
-                auth.login(request, user)
+                login(request, user)
                 
                 return redirect('dashboard')
             
@@ -100,6 +99,5 @@ def my_login(request):
             
 
 # Dashboard
-
 def dashboard(request):
     return render(request, 'crm/dashboard.html')
