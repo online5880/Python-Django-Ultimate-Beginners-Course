@@ -7,10 +7,6 @@
     <h3>Tasks</h3>
     <hr>
 
-    <a href="{% url 'create-task' %}">Task 만들기</a>
-
-    <br>
-    
     {% for task in AllTasks %}
       <br>
       {{task.id}}

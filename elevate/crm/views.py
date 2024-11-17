@@ -6,16 +6,7 @@ from .forms import TaskForm
 def homepage(request):
     return render(request,"crm/index.html")
 
-def task(request):
-    
-    queryDataAll = Task.objects.all()
-    
-    context = {'AllTasks':queryDataAll}
-    
-    return render(request, 'crm/task.html',context)
-
-def register(request):
-    return render(request,'crm/register.html')
+# CRUD - Create
 
 def create_task(request):
     form = TaskForm()
@@ -24,7 +15,21 @@ def create_task(request):
         form = TaskForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('task')
+            return redirect('view-tasks')
     
     context = {"TaskForm":form}
     return render(request,'crm/create-task.html',context)
+
+# CRUD - Read
+
+def tasks(request):
+    
+    queryDataAll = Task.objects.all()
+    
+    context = {'AllTasks':queryDataAll}
+    
+    return render(request, 'crm/view-tasks.html',context)
+
+# Registration webpage
+def register(request):
+    return render(request,'crm/register.html')
