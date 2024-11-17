@@ -1,0 +1,17 @@
+{% extends "crm/base.html" %}
+
+{% block content %}
+    <h1>Task 삭제</h1>
+    <hr>
+
+    <form action="" method="post", autucomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <p>정말 삭제하겠습니까?</p>
+
+        <br>
+        
+
+        <input type="submit" value="Task 삭제">
+    </form>
+{% endblock content %}

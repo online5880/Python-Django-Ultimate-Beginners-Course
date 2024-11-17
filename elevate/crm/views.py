@@ -7,7 +7,6 @@ def homepage(request):
     return render(request,"crm/index.html")
 
 # CRUD - Create
-
 def create_task(request):
     form = TaskForm()
     
@@ -21,7 +20,6 @@ def create_task(request):
     return render(request,'crm/create-task.html',context)
 
 # CRUD - Read
-
 def tasks(request):
     
     queryDataAll = Task.objects.all()
@@ -32,7 +30,6 @@ def tasks(request):
 
 
 # CRUD - Update
-
 def update_task(request, pk):
     task = Task.objects.get(id=pk)
     
@@ -49,9 +46,14 @@ def update_task(request, pk):
     return render(request, 'crm/update-task.html',context)
 
 # CRUD - DELETE
-
 def delete_task(request, pk):
-    pass
+    task = Task.objects.get(id=pk)
+    
+    if request.method == 'POST':
+        task.delete()
+        return redirect('view-tasks')
+    
+    return render(request, 'crm/delete-task.html')
 
 # Registration webpage
 def register(request):

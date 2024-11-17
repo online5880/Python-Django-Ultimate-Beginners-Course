@@ -18,6 +18,10 @@
       {{task.created}}
       <br>
       <a href="{% url 'update-task' task.id %}">Task 업데이트</a>
+
+      &nbsp;
+      
+      <a href="{% url 'delete-task' task.id %}">Task 삭제</a>
       <br>
     {% endfor %}
 
