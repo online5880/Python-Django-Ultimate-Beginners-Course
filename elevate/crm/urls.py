@@ -6,5 +6,6 @@ urlpatterns = [
     path("",views.homepage,name=""),
     path('create-task',views.create_task,name='create-task'),
     path('view-tasks',views.tasks,name='view-tasks'),
+    path('update-task/<str:pk>',views.update_task,name='update-task'),
     path("register",views.register,name="register"),
 ]

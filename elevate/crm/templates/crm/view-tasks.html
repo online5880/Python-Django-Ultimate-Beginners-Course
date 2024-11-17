@@ -17,6 +17,8 @@
       <br>
       {{task.created}}
       <br>
+      <a href="{% url 'update-task' task.id %}">Task 업데이트</a>
+      <br>
     {% endfor %}
 
   {% endblock content %}
