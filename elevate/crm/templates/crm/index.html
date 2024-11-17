@@ -5,11 +5,18 @@
   {% block content %}
     <h1>홈페이지</h1>
     <p>어서오십쇼</p>
-    {% if first_name == 'Kate Johnson' %}
-      <h5>Welcome home, Kate</h5>
-    {% else %}
-      <h5>Access denied!</h5>
-    {% endif %}
+
+    {% for client in mainClientList %}
+
+      <br>
+      {{client.id}}
+      <br>
+      {{client.name}}
+      <br>
+      {{client.occupation}}
+      <br>
+    {% endfor %}
+
   {% endblock content %}
 
 </html>
