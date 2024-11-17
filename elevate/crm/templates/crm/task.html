@@ -3,22 +3,25 @@
 
 <html>
   {% block content %}
+
     <h3>Tasks</h3>
-
     <hr>
-    
-    {{task.title}}
-    {{task.description}}
-    {{task.created}}
 
-    {% comment %} {% for task in allTasks %}
+    <a href="{% url 'create-task' %}">Task 만들기</a>
+
+    <br>
+    
+    {% for task in AllTasks %}
+      <br>
+      {{task.id}}
       <br>
       {{task.title}}
       <br>
       {{task.description}}
       <br>
       {{task.created}}
-    {% endfor %} {% endcomment %}
+      <br>
+    {% endfor %}
 
   {% endblock content %}
 
