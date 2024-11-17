@@ -1,0 +1,15 @@
+{% extends "crm/base.html" %}
+
+{% block content %}
+    <h1>Task 만들기</h1>
+    <p>Task form</p>
+    <hr>
+
+    <form action="" method="post", autucomplete="off" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{TaskForm.as_p}}
+
+        <input type="submit" value="완료">
+    </form>
+{% endblock content %}
